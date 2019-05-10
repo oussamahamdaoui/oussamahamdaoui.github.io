@@ -3,7 +3,8 @@ const consoleDiv = document.querySelector('#text');
 const input = document.querySelector('#input');
 document.body.addEventListener('click', ()=>{
   input.focus();
-})
+});
+input.focus();
 
 function setEndOfContenteditable(contentEditableElement)
 {
@@ -60,7 +61,7 @@ Sorry, this is comming soon, I promis you will be amazed!
   },
 
   missingPage(){
-    
+
   }
 
 };
