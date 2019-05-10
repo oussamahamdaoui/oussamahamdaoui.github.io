@@ -53,12 +53,21 @@ const type = (text)=>{
 }
 
 const hidden = {
+  briks(){
+    return `
+Sorry, this is comming soon, I promis you will be amazed!
+`;
+  },
+
+  missingPage(){
+    
+  }
 
 };
 
 const Console =  {
   contact(){
-    return '';
+    return hidden.briks();
   },
   menu(){
     return `Menu:
@@ -103,8 +112,8 @@ My name is Oussama Hamdaoui, im a computer scientist, I live and study in Lille 
 My main intrests are computer scince, football, traveling and... fooood 🍔.
 Curently I'm working as webdevelopper at AXA, since I started there in 2018 I have learned a loot about clean code, Test Drive and Deveop, agile...
 Like every developer I have a favorite language, JavaScript but I often have to use Java, C# or Python (realy cool languge by the way) for more old school stuff.
-Sins you know me now, please feel free to send me a tweet and tell me more about you.
-By the way because we are friends now I will give you a hint, one of the hidden easter egg starts with "br" try typing that in the console and see what happens
+Sins you know me now, please feel free to check the contact section if you want to say hi.
+Now that we are friends I can give you a hint, one of the hidden easter egg is "briks" try typing that in the console and see what happens.
 `
   }
 }
@@ -118,10 +127,11 @@ input.addEventListener('keydown', (e)=>{
   if(e.keyCode === 13){
     e.preventDefault();
     const inp = input.innerHTML.toLowerCase();
-    if(Console[inp]){
+    const hiddenAndPublic = {...Console, ...hidden};
+    if(hiddenAndPublic[inp]){
       consoleDiv.innerHTML = '';
       consoleDiv.append(startCode);
-      type(Console[inp]());
+      type(hiddenAndPublic[inp]());
       input.innerHTML = '';
     }
     else{
