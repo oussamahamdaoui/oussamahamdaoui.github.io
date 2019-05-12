@@ -44,7 +44,6 @@ Here are listed my GitHub projects, most of them are still work in preogress:
   • RCode: is a JavaScript exercice engen that helps you write custom exercises.
   • simple-Doodle: a funny animation made with HTM CSS and JavaScript
   • spandita-malik.com: is a website I coded for the best photograph ever go check it out.
-  • twit-tor: (comming soon) is a paper on a new way of using onion protection to send anonymous messages
 
 Type the name to know more about the project
 
@@ -65,4 +64,15 @@ Here is the hint as promissed type "briks" and see what happens.
 contact(){
     return '';
   }
+}
+
+const goTo = (url) => () => {
+  window.location = url;
+}
+
+const projects = {
+  forgjs: goTo('https://github.com/oussamahamdaoui/forgjs'),
+  rcode: goTo('https://oussamahamdaoui.github.io/RCode./'),
+  "simple-doodle": goTo('https://oussamahamdaoui.github.io/simple-Doodle/'),
+  "spandita-malik.com": goTo('https://spandita-malik.com')
 }

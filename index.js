@@ -1,6 +1,7 @@
 const startCode = document.querySelector('textarea').value;
 const consoleDiv = document.querySelector('#text');
 const input = document.querySelector('#input');
+let currentPage = 'home';
 
 document.body.addEventListener('click', ()=>{
   input.focus();
@@ -61,10 +62,15 @@ type(content.home());
 
 input.addEventListener('keydown', (e)=>{
   const inp = input.innerHTML.toLowerCase();
-  const keys = Object.keys(content);
+  let keys = Object.keys(content);
+  let hiddenAndPublic = {...content, ...hidden};
+  
+  if(currentPage === 'projects'){
+    keys = [...Object.keys(projects), ...keys];
+    hiddenAndPublic = {...hiddenAndPublic, ...projects}
+  }
   if(e.keyCode === 13){
     e.preventDefault();
-    const hiddenAndPublic = {...content, ...hidden};
     if(hiddenAndPublic[inp]){
       consoleDiv.innerHTML = '';
       const isText = hiddenAndPublic[inp]();
@@ -73,15 +79,13 @@ input.addEventListener('keydown', (e)=>{
         type(isText);
       }
       input.innerHTML = '';
+      currentPage = inp;
     }
     else{
       const closest = keys.filter(command => levenshteinDistance(command, inp) < 3)[0];
       input.innerHTML = '';
       if(closest){
         type(`You sloud try '${closest}' 😉 \n`);
-      }
-      else{
-        /// oups 404
       }
     }
   
