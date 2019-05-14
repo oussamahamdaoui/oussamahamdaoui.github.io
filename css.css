@@ -42,3 +42,8 @@ html, body{
 #canvas.visible{
   display: block;
 }
+
+a {
+  text-decoration: underline;
+    cursor: pointer;
+}

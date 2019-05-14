@@ -39,23 +39,50 @@ const levenshteinDistance = (a, b) => {
   return distanceMatrix[b.length][a.length];
 }
 
-
+let pandas = 0;
 
 const type = (text)=>{
   if(!text) return;
   let index = 0
+  const textArray = text.split(/(\s)/g);
   const i = setInterval(()=>{
-    if(index > text.length - 3){
+    if(index > textArray.length - 1){
       clearInterval(i);
     }
     else{
-      consoleDiv.textContent += text.slice(index * 2, (index + 1) * 2);
+      consoleDiv.append(toElement(textArray[index]));
       index++;
     }
   }, 0)
 }
 
-consoleDiv.append(startCode);
+const startCodeAppender = () => {
+  consoleDiv.append(startCode);
+  if(pandas !== 0){
+    consoleDiv.append(`You made ${pandas} panda${pandas > 1 ? 's': '' } cry today, stop clicking on the links, type!\n\n`);
+  }
+}
+
+const toElement = (txt) =>{
+  if(txt[0] === '#'){
+    const link = document.createElement('a');
+    link.innerText = txt.slice(1);
+    link.classList.add('console-link');
+
+    link.addEventListener('click', ()=> {
+      consoleDiv.innerHTML = '';
+      startCodeAppender()
+      const key = link.innerText.slice(0,-1).toLocaleLowerCase();
+      type({...content, ...projects}[key]())
+      pandas ++;
+    })
+    return link;
+  }
+  return txt;
+}
+
+
+startCodeAppender();
 type(content.home());
 
 
@@ -75,7 +102,7 @@ input.addEventListener('keydown', (e)=>{
       consoleDiv.innerHTML = '';
       const isText = hiddenAndPublic[inp]();
       if(isText){
-        consoleDiv.append(startCode);
+        startCodeAppender();
         type(isText);
       }
       input.innerHTML = '';
