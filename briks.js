@@ -45,10 +45,10 @@ const startBriks = () => {
       document.removeEventListener("keyup", keyUpHandler);
       consoleDiv.append(startCode);
       if(win){
-        type(`🎉 You win! You got to know another easter egg type \'hacker\' in the console \n`);
+        type(`🎉 You win! You got to know another easter egg type \'tchat\' in the console \n`);
       }
       else{
-        type('😓 You will do better next time  \n');
+        type('😓 You will do better next time, I had a surprise for you.  \n');
       }
   }
 

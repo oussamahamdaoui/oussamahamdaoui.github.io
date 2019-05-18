@@ -22,11 +22,19 @@ html, body{
   font-size: 18px;
 }
 
-
+#file-input{
+  display: none;
+}
 #input{
-  display: inline;
+  display: inline-block;
   outline: none;
-  padding-right:2px; 
+  padding-right:2px;
+  border:none;
+  background-color: transparent;
+  font-size: inherit;
+  color: inherit;
+  font-family: inherit;
+  width:calc(100% - 100px);
 }
 
 #canvas{
@@ -41,6 +49,12 @@ html, body{
 
 #canvas.visible{
   display: block;
+}
+
+.img{
+  width:300px;
+  height: auto;
+  vertical-align: top;
 }
 
 a {

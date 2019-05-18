@@ -3,6 +3,9 @@ const hidden = {
     startBriks();
     return false;
   },
+  tchat(){
+    startTchat();
+  }
 
 };
 
