@@ -26,7 +26,8 @@ html, body{
 #file-input{
   display: none;
 }
-#input{
+#search{
+  -webkit-appearance: none;
   display: inline-block;
   outline: none;
   padding-right:2px;
@@ -36,6 +37,7 @@ html, body{
   color: inherit;
   font-family: inherit;
   width:calc(100% - 100px);
+  height:50px;
 }
 
 #canvas{

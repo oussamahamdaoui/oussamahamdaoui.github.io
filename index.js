@@ -1,14 +1,10 @@
 const startCode = document.querySelector('textarea').value;
 const consoleDiv = document.querySelector('#text');
 const consoleRoot = document.querySelector('#console');
-const input = document.querySelector('#input');
+const input = document.querySelector('#search');
 let currentPage = 'home';
 let off = false;
 
-document.body.addEventListener('click', ()=>{
-  input.focus();
-});
-input.focus();
 
 function setEndOfContenteditable(contentEditableElement)
 {
@@ -49,7 +45,7 @@ const type = (text)=>{
       consoleDiv.append(toElement(textArray[index]));
       index++;
     }
-  }, 0)
+  }, 10)
 }
 
 const startCodeAppender = () => {

@@ -85,7 +85,8 @@ const startTchat = async () => {
   off = true;
   type(`
 Wellcome in the tchat, say hi and see if there are people connected
-To exit the tchat type exit:
+type $img to add an image
+To exit the tchat type exit
 `);
 
   const user = {
