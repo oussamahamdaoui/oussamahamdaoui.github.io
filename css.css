@@ -10,6 +10,7 @@ textarea{
 html, body{
   height:100%;
   background-color: black;
+  overflow-x: hidden;
 }
 
 #console{
@@ -18,7 +19,7 @@ html, body{
   color:white;
   font-family: monospace;
   white-space: pre-wrap;
-  padding: 50px;
+  padding: 1em;
   font-size: 18px;
 }
 

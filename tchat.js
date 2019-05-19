@@ -91,7 +91,7 @@ To exit the tchat type exit:
   const user = {
     publicKey:makeid(18),
   }
-  const socketServer = 'https://oniontchat.herokuapp.com/'; 
+  const socketServer = 'https://oniontchat.herokuapp.com'; 
   const socket = io(socketServer);
   const thcatMessages = document.createElement('span');
   thcatMessages.classList.add('messsahe')
