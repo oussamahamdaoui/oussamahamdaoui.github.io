@@ -1,0 +1,39 @@
+@use 'Footer';
+@use 'colors';
+@use 'TopBar';
+@use 'SideBar';
+@use 'Page';
+
+@import url("https://fonts.googleapis.com/css?family=Sen:400,800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+}
+
+body,
+.app {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  font-family: "Sen", monospace;
+  font-size: 16px;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+}
+
+.resizable {
+  flex: 1;
+  display: flex;
+  .element {
+    display: contents;
+  }
+}

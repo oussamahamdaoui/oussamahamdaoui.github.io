@@ -1,0 +1,29 @@
+@use 'colors';
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 30px;
+  background-color: colors.$footer-bg;
+  border-top: 1px solid colors.$page-bg;
+  color: colors.$footer-fg;
+
+  div {
+    text-align: center;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    svg {
+      width: 20px;
+      height: 20px;
+      fill: colors.$footer-fg;
+      stroke-width: 0;
+    }
+  }
+  .center {
+    flex: 1;
+  }
+}
