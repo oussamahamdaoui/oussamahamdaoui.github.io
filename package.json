@@ -16,7 +16,7 @@
     "@forgjs/noframework": "^1.2.0",
     "babel-polyfill": "^6.26.0",
     "feather-icons": "^4.26.0",
-    "highlight.js": "^9.18.1",
+    "highlight.js": "^10.1.2",
     "marked": "^0.8.1"
   },
   "devDependencies": {
