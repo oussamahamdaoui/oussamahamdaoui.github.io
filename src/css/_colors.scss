@@ -1,14 +1,27 @@
-$tob-bar-bg: #1e2238;
-$top-bar-tab-underline: #7aaafe;
-$top-bar-tab-underline-fg: rgb(205, 203, 230);
-$top-bar-fg: #4a4b73;
+$tob-bar-bg: #141516;
+$top-bar-tab-underline: #fff;
+$top-bar-tab-underline-fg: #fff;
+$top-bar-fg: #919295;
 
-$footer-bg: #1e2238;
-$footer-fg: #4a4b73;
+$footer-bg: #141516;
+$footer-fg: #606062;
 
-$side-bar-bg: #1e2238;
-$side-bar-fg: #50527e;
+$side-bar-bg: #141516;
+$side-bar-fg: #919295;
 
-$page-bg: rgb(47, 46, 85);
-$page-numbers-color: rgba(82, 81, 131);
-$page-fg: rgb(163 163 197);
+$page-bg: #0D0D0E;
+$page-fg: #737475;
+$page-numbers-color: #323232;
+
+$dark:#000000;
+
+
+
+@mixin noselect {
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none; 
+       -moz-user-select: none; 
+        -ms-user-select: none; 
+            user-select: none;
+}

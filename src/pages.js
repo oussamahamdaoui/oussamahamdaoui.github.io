@@ -1,7 +1,8 @@
 module.exports = [
-  'About-me/index.md',
+  'About-me/index.html',
   'Projects/noframework.js',
   'Projects/Forg.js',
-  'Projects/light-invoice.js',
-  'Blog/hello.md',
+  'Projects/light-invoice.app',
+  'Other/snake.js',
+
 ];

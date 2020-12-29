@@ -1,7 +1,6 @@
-# ![forgJs logo](https://github.com/oussamahamdaoui/forgJs/raw/master/media/logo.png?raw=true)
+# Forgjs
 
-ForgJs is a JavaScript lightweight object validator, it's my first contribution to the opensource community. As javascript became my favorite language for the back-end (bye PHP 👋)
-I thought i could write a library that could validate JSON for both the front-end and the back-end. Thats how Forg.js was born.
+ForgJs is a JavaScript lightweight object validator, it's my first contribution to the opensource community. As javascript became my favorite language for the back-end I thought I could write a library that would validate javascript objects for both the front-end and the back-end. Thats how Forg.js was born.
 
 ### Here is a quick example:
 

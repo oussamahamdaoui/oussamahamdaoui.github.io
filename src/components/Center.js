@@ -1,8 +1,8 @@
 const { $, html } = require('@forgjs/noframework');
 const marked = require('marked');
 const hljs = require('highlight.js');
+const CustomPages = require('../CustomPages');
 const { globalEvents, Events: { GO_TO } } = require('../GlobalEvents');
-
 
 marked.setOptions({
   renderer: new marked.Renderer(),
@@ -23,26 +23,30 @@ marked.setOptions({
 
 const Center = () => {
   const DomElement = html`<div class="page">
-    <div class="numbers">
-      ${Array(23).fill(null).map((e, i) => html`<span>${i + 1}</span>`)}
-    </div>
     <div class="content">
-    
+      ${Object.values(CustomPages)}
     </div>
   </div>`;
 
   const contentElement = $('.content', DomElement);
   let current = null;
+  const pages = { ...CustomPages };
 
   globalEvents.subscribe(GO_TO, async (link) => {
     if (current === link) return;
+    if (pages[current]) {
+      pages[current].classList.add('hide');
+    }
     current = link;
-    const res = await fetch(`md/${link}.md`);
-    const md = await res.text();
-    contentElement.innerHTML = marked.parse(md);
+    if (!pages[current]) {
+      const res = await fetch(`md/${link}.md`);
+      const md = await res.text();
+      pages[current] = html`<div>${marked.parse(md)}</div>`;
+      contentElement.appendChild(pages[current]);
+    }
+    pages[current].classList.remove('hide');
+    contentElement.scrollTop = 0;
   });
-
-
   return DomElement;
 };
 

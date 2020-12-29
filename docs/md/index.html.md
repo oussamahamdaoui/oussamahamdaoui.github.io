@@ -9,5 +9,5 @@ Like every developer I have a favorite language JavaScript ❤️ but I often ha
 Writing code is amazing, but there are other technologies that i learned:
 I have done continuous integration with circle ci and jenkins and automated tests with code  climate. Almost all the code I write is tested, I use Jest and Mocha
 for the javascript code and JUnit for java. For the data persistency, I have used MySQL, Oracle, DB2, and SQL Server and with the rise of javascript I learned
-MongoDB and I have some notions of Elastic Search (I can do simple requests and use buckets 😎.
-You can find my projects on my GitHub page if you want to know more.
+MongoDB and I have some notions of Elastic Search (I can do simple requests and use buckets 😎).
+You can check my GitHub if you want to know more.

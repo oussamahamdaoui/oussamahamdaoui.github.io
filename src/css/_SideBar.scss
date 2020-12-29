@@ -4,16 +4,25 @@
   width: 300px;
   height: 100%;
   background-color: colors.$side-bar-bg;
-  padding: 5px;
-  padding-left: 15px;
   color: colors.$side-bar-fg;
+  position: relative;
+
+  .resizer{
+    position: absolute;
+    right: 0;
+    width: 10px;
+    height: 100%;
+    cursor: col-resize;
+    z-index: 2;
+  }
 
   .folder {
     display: flex;
     flex-direction: column;
+    @include colors.noselect;
     &.open {
       .links {
-        height: auto;
+        display: block;
       }
 
       .chevron {
@@ -23,13 +32,22 @@
 
     .chevron {
       transform: rotate(0deg);
+      svg{
+        fill:transparent;
+      }
     }
 
     .title {
       display: flex;
       align-items: center;
       cursor: pointer;
-
+      padding-top: 7px;
+      padding-bottom: 7px;
+      padding-left: 7px;
+      outline: none;
+      &:focus{
+        background-color: colors.$page-bg;
+      }
       span {
         display: flex;
         align-items: center;
@@ -39,17 +57,35 @@
         width: 16px;
         margin: 3px;
       }
+
+      .folder-icon{
+        svg{
+          fill:colors.$side-bar-fg;
+        }
+      }
     }
   }
 
   .links {
-    margin-left: 26px;
-    height: 0;
+    display: none;
     overflow: hidden;
     div {
-      margin-top: 7px;
-      margin-bottom: 7px;
+      padding-top: 7px;
+      padding-bottom: 7px;
+      padding-left: 26px;
       cursor: pointer;
+      outline: none;
+      border-left: 2px solid transparent;
+      transition: background-color 100ms linear;
+      
+      &:hover,
+      &:focus,
+      &.selected{
+        background-color: colors.$page-bg;
+      }
+      &.selected{
+        border-left: 2px solid white;
+      }
       &:hover {
         text-decoration: underline;
       }
@@ -57,7 +93,7 @@
   }
 }
 
-@media (min-width: 320px) and (max-width: 480px) {
+@media (min-width: 0px) and (max-width: 580px) {
   .side-bar {
     display: none;
   }

@@ -1,123 +1,141 @@
-@charset "UTF-8";
-@import url("https://fonts.googleapis.com/css?family=Sen:400,800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
 .footer {
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 30px;
-  background-color: #1e2238;
-  border-top: 1px solid #2f2e55;
-  color: #4a4b73;
+  background-color: #141516;
+  border-top: 1px solid black;
+  color: #606062;
 }
-.footer div {
+.footer .pos {
+  width: auto;
+}
+.footer div, .footer a {
   text-align: center;
   padding: 10px;
   display: flex;
+  height: 40px;
   justify-content: center;
   align-items: center;
 }
-.footer div svg {
+.footer div svg, .footer a svg {
   width: 20px;
   height: 20px;
-  fill: #4a4b73;
+  fill: #606062;
   stroke-width: 0;
 }
 .footer .center {
   flex: 1;
 }
 
+@media (min-width: 0px) and (max-width: 580px) {
+  .footer {
+    display: none;
+  }
+}
 .top-bar {
   width: 100%;
-  height: 35px;
-  padding-left: 12px;
-  padding-right: 12px;
-  background-color: #1e2238;
-  border-bottom: 1px solid #2f2e55;
+  height: 70px;
+  position: relative;
+  background-color: #141516;
   display: flex;
+  border-bottom: 1px solid #000000;
+  align-items: center;
 }
 .top-bar svg {
   width: 16px;
   height: 16px;
 }
-.top-bar .search {
-  width: 300px;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  padding: 5px;
+.top-bar img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  margin-right: 1em;
+  margin-left: 1em;
 }
-.top-bar .search input {
-  flex: 1;
-  background-color: transparent;
-  border: none;
-  outline: none;
-  padding-left: 15px;
-  font-size: 16px;
-  color: #4a4b73;
-}
-.top-bar .search input::-webkit-input-placeholder {
-  color: #4a4b73;
-}
-.top-bar .search input::-moz-placeholder {
-  color: #4a4b73;
-}
-.top-bar .search input:-ms-input-placeholder {
-  color: #4a4b73;
-}
-.top-bar .search input:-moz-placeholder {
-  color: #4a4b73;
-}
-.top-bar .search svg {
-  color: #7aaafe;
+.top-bar h1 {
+  font-size: 1.1em;
+  margin-right: 1.2em;
+  color: #919295;
 }
 .top-bar .tabs {
   flex: 1;
   display: flex;
   height: 100%;
   overflow-x: auto;
+  position: relative;
+  z-index: 99;
 }
 .top-bar .tabs::-webkit-scrollbar {
   display: none;
 }
 .top-bar .tabs .tab {
   display: flex;
-  justify-content: center;
   align-items: center;
-  width: 170px;
-  min-width: 170px;
-  border-bottom: 2px solid transparent;
-  margin-left: 5px;
-  margin-right: 5px;
-  padding: 5px;
-  color: #4a4b73;
+  position: relative;
+  justify-content: space-between;
+  padding: 1em;
+  color: #919295;
   cursor: pointer;
+  border-left: 1px solid #000000;
+  outline: none;
+  transition: background-color 100ms linear;
+}
+.top-bar .tabs .tab:focus {
+  background-color: #0D0D0E;
+}
+.top-bar .tabs .tab:hover {
+  background-color: #0D0D0E;
+}
+.top-bar .tabs .tab:last-of-type {
+  border-right: 1px solid #000000;
+}
+.top-bar .tabs .tab .close {
+  margin-left: 1em;
 }
 .top-bar .tabs .tab.selected {
-  border-bottom: 2px solid #7aaafe;
-  color: #cdcbe6;
+  color: #fff;
+  background-color: #0D0D0E;
 }
 .top-bar .tabs .tab.selected svg {
-  color: #7aaafe;
-}
-.top-bar .tabs .tab .title {
-  flex: 1;
+  color: #fff;
 }
 
+@media (min-width: 0px) and (max-width: 580px) {
+  .top-bar {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
 .side-bar {
   width: 300px;
   height: 100%;
-  background-color: #1e2238;
-  padding: 5px;
-  padding-left: 15px;
-  color: #50527e;
+  background-color: #141516;
+  color: #919295;
+  position: relative;
+}
+.side-bar .resizer {
+  position: absolute;
+  right: 0;
+  width: 10px;
+  height: 100%;
+  cursor: col-resize;
+  z-index: 2;
 }
 .side-bar .folder {
   display: flex;
   flex-direction: column;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 .side-bar .folder.open .links {
-  height: auto;
+  display: block;
 }
 .side-bar .folder.open .chevron {
   transform: rotate(90deg);
@@ -125,10 +143,20 @@
 .side-bar .folder .chevron {
   transform: rotate(0deg);
 }
+.side-bar .folder .chevron svg {
+  fill: transparent;
+}
 .side-bar .folder .title {
   display: flex;
   align-items: center;
   cursor: pointer;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-left: 7px;
+  outline: none;
+}
+.side-bar .folder .title:focus {
+  background-color: #0D0D0E;
 }
 .side-bar .folder .title span {
   display: flex;
@@ -139,148 +167,187 @@
   width: 16px;
   margin: 3px;
 }
+.side-bar .folder .title .folder-icon svg {
+  fill: #919295;
+}
 .side-bar .links {
-  margin-left: 26px;
-  height: 0;
+  display: none;
   overflow: hidden;
 }
 .side-bar .links div {
-  margin-top: 7px;
-  margin-bottom: 7px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-left: 26px;
   cursor: pointer;
+  outline: none;
+  border-left: 2px solid transparent;
+  transition: background-color 100ms linear;
+}
+.side-bar .links div:hover, .side-bar .links div:focus, .side-bar .links div.selected {
+  background-color: #0D0D0E;
+}
+.side-bar .links div.selected {
+  border-left: 2px solid white;
 }
 .side-bar .links div:hover {
   text-decoration: underline;
 }
 
-@media (min-width: 320px) and (max-width: 480px) {
+@media (min-width: 0px) and (max-width: 580px) {
   .side-bar {
     display: none;
   }
 }
-/*
+/* Base16 Atelier Cave Dark - Theme */
+/* by Bram de Haan (http://atelierbram.github.io/syntax-highlighting/atelier-schemes/cave) */
+/* Original Base16 color scheme by Chris Kempson (https://github.com/chriskempson/base16) */
+/* Atelier-Cave Comment */
+.hljs-comment,
+.hljs-quote {
+  color: #7e7887;
+}
 
-Dracula Theme v1.2.0
+/* Atelier-Cave Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-attribute,
+.hljs-regexp,
+.hljs-link,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class {
+  color: #be4678;
+}
 
-https://github.com/zenorocha/dracula-theme
+/* Atelier-Cave Orange */
+.hljs-number,
+.hljs-meta,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params {
+  color: #aa573c;
+}
 
-Copyright 2015, All rights reserved
+/* Atelier-Cave Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet {
+  color: #2a9292;
+}
 
-Code licensed under the MIT license
-http://zenorocha.mit-license.org
+/* Atelier-Cave Blue */
+.hljs-title,
+.hljs-section {
+  color: #576ddb;
+}
 
-@author Éverton Ribeiro <nuxlli@gmail.com>
-@author Zeno Rocha <hi@zenorocha.com>
+/* Atelier-Cave Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+  color: #955ae7;
+}
 
-*/
+.hljs-deletion,
+.hljs-addition {
+  color: #19171c;
+  display: inline-block;
+  width: 100%;
+}
+
+.hljs-deletion {
+  background-color: #be4678;
+}
+
+.hljs-addition {
+  background-color: #2a9292;
+}
+
 .hljs {
   display: block;
   overflow-x: auto;
+  background: #19171c;
+  color: #8b8792;
   padding: 0.5em;
-  background: #282a36;
-}
-
-.hljs-keyword,
-.hljs-selector-tag,
-.hljs-literal,
-.hljs-section,
-.hljs-link {
-  color: #8be9fd;
-}
-
-.hljs-function .hljs-keyword {
-  color: #ff79c6;
-}
-
-.hljs,
-.hljs-subst {
-  color: #f8f8f2;
-}
-
-.hljs-string,
-.hljs-title,
-.hljs-name,
-.hljs-type,
-.hljs-attribute,
-.hljs-symbol,
-.hljs-bullet,
-.hljs-addition,
-.hljs-variable,
-.hljs-template-tag,
-.hljs-template-variable {
-  color: #f1fa8c;
-}
-
-.hljs-comment,
-.hljs-quote,
-.hljs-deletion,
-.hljs-meta {
-  color: #6272a4;
-}
-
-.hljs-keyword,
-.hljs-selector-tag,
-.hljs-literal,
-.hljs-title,
-.hljs-section,
-.hljs-doctag,
-.hljs-type,
-.hljs-name,
-.hljs-strong {
-  font-weight: bold;
 }
 
 .hljs-emphasis {
   font-style: italic;
 }
 
+.hljs-strong {
+  font-weight: bold;
+}
+
 .page {
-  flex: 1;
-  background-color: #2f2e55;
+  background-color: #0D0D0E;
   width: 100%;
   height: 100%;
+  padding-top: 1em;
+  padding-bottom: 1em;
   display: flex;
+  flex: 1;
+  flex-direction: row;
+  overflow-y: scroll;
+  position: relative;
+  border-left: 1px solid #000000;
 }
 .page code {
-  padding: 15px;
-  border-radius: 7px;
+  padding: 1em;
+  padding-top: 0em;
+  font-size: 18px;
+  background-color: #0D0D0E;
+  font-family: inherit;
+}
+.page pre {
+  font-family: inherit;
+  line-height: 1em;
+  white-space: break-spaces;
 }
 .page .content {
+  position: relative;
   flex: 1;
-  height: calc(100vh - 60px);
-  padding: 15px;
-  padding-top: 5px;
-  color: #a3a3c5;
-  overflow-y: auto;
+  padding: 1em;
+  color: #737475;
+  min-height: min-content;
+}
+.page .content > div {
+  min-height: 100vh;
+  padding-bottom: 1em;
 }
 .page .content h1,
 .page .content h2,
 .page .content h3 {
-  margin-top: 5px;
-  margin-bottom: 15px;
-  padding-bottom: 7px;
+  color: white;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
 }
 .page .content h1 {
-  border-bottom: 1px solid #a3a3c5;
+  border-bottom: 1px solid #737475;
 }
 .page .content a {
-  color: #a3a3c5;
+  color: #737475;
 }
 .page .content a:visited {
-  color: #a3a3c5;
-}
-.page .content img {
-  width: 100%;
-  margin: auto;
+  color: #737475;
 }
 .page .numbers {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   width: 30px;
   padding-left: 5px;
   padding-top: 5px;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  color: #525183;
+  color: #323232;
+  width: 2em;
 }
 .page .numbers span {
   margin-top: 5px;
@@ -293,8 +360,19 @@ http://zenorocha.mit-license.org
   box-sizing: border-box;
 }
 
-body {
-  overflow: hidden;
+html, body {
+  height: 100%;
+  position: fixed;
+  background-color: #141516;
+}
+html.resizing, body.resizing {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: col-resize !important;
 }
 
 body,
@@ -302,8 +380,9 @@ body,
   width: 100vw;
   min-height: 100vh;
   display: flex;
-  font-family: "Sen", monospace;
-  font-size: 16px;
+  font-family: "Roboto Mono", monospace;
+  font-size: 18px;
+  overflow: hidden;
 }
 
 .app {
@@ -314,9 +393,14 @@ body,
 .resizable {
   flex: 1;
   display: flex;
+  overflow: hidden;
 }
 .resizable .element {
   display: contents;
+}
+
+.hide {
+  display: none;
 }
 
 /*# sourceMappingURL=index.css.map */
